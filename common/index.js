@@ -1,3 +1,4 @@
+export { default as Container } from './components/container'
 export { default as Title1 } from './components/title1'
 export { default as Button1 } from './components/button1'
 export { default as Button2 } from './components/button2'

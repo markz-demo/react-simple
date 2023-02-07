@@ -6,11 +6,11 @@
             "@images": [
                 "./assets/images"
             ],
-            "common-ui/*": [
-                "./common/*"
-            ],
             "common-ui": [
                 "./common/index",
+            ],
+            "common-ui/*": [
+                "./common/*"
             ]
         }
     },

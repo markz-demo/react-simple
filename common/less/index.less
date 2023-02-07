@@ -40,19 +40,73 @@ img {
     margin-top: 16px;
 }
 
-.common-title1 {
-    display: inline-block;
-    padding: 8px;
-    color: #fff;
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.ml-16 {
+    margin-left: 16px;
+}
+
+.mr-16 {
+    margin-right: 16px;
+}
+
+.m-16 {
+    margin: 16px;
+}
+
+.pt-16 {
+    padding-top: 16px;
+}
+
+.pb-16 {
+    padding-bottom: 16px;
+}
+
+.pl-16 {
+    padding-left: 16px;
+}
+
+.pr-16 {
+    padding-right: 16px;
+}
+
+.p-16 {
+    padding: 16px;
+}
+
+.bg-red {
     background-color: red;
 }
 
+.common-container {
+    .p-16();
+    border: 1px solid #333;
+    border-style: dashed;
+
+    &+& {
+        .mt-16();
+    }
+
+    &-title {
+        font-weight: 600;
+        font-size: 16px;
+        .mb-16();
+    }
+}
+
+.common-title1,
 .common-button1,
 .common-button2,
 .common-button3 {
     display: inline-block;
     padding: 8px;
     color: #fff;
+}
+
+.common-title1 {
+    background-color: red;
 }
 
 .common-button1 {

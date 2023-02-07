@@ -1,9 +1,11 @@
 const path = require('path')
+const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin")
+const devMode = process.env.NODE_ENV !== "production"
 
 module.exports = {
     entry: {
@@ -15,8 +17,8 @@ module.exports = {
         chunkFilename: '[name].[chunkhash:8].js',
         clean: true,
     },
-    mode: 'development',
-    devtool: "source-map",
+    mode: devMode ? 'development' : 'production',
+    devtool: devMode ? "source-map" : false,
     target: 'browserslist',
     // watch: false,
     // watchOptions: {
@@ -29,7 +31,8 @@ module.exports = {
         rules: [
             {
                 test: /\.(less|css)$/,
-                use: [/* 'style-loader', */ MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+                // use: ['style-loader', 'css-loader', 'less-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -62,7 +65,7 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].css",
-            chunkFilename: '[name].[chunkhash:8].css',
+            chunkFilename: devMode ? "[id].css" : "[id].[contenthash:8].css", // '[name].[chunkhash:8].css',
             ignoreOrder: true,
         }),
         new CaseSensitivePathsPlugin(),
@@ -71,10 +74,13 @@ module.exports = {
                 { context: './assets', from: 'favicon.ico', to: '', info: { minimized: true } },
                 { context: './assets', from: 'index.html', to: '', info: { minimized: true } },
             ],
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
     ],
     optimization: {
-        minimize: false,
+        minimize: devMode ? false : true,
         minimizer: [
             new CssMinimizerPlugin({}),
             new TerserPlugin({
@@ -116,4 +122,5 @@ module.exports = {
         //     //     },
         // },
     },
+    experiments: { topLevelAwait: true },
 }

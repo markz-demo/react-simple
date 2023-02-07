@@ -1,8 +1,8 @@
 import { Container } from "common-ui"
 
-export default function Page2() {
+export default function Sub2() {
     return (
-        <Container title="Page2">
+        <Container title="Sub2">
             TODO
         </Container>
     )
