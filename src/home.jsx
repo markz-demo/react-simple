@@ -1,5 +1,5 @@
-
 import { useState } from 'react'
+import classNames from 'classnames'
 import './home.less'
 import styles from './home.module.less'
 import test_big from '@images/test-big.jpg'
@@ -16,14 +16,22 @@ export default function Home() {
     }
     return (
         <div>
-            <h2 className="home-div">Hello World! {count}</h2>
+            <h2 className="home-div">Hello World!{count}</h2>
             <button onClick={onClick}>count increase</button>
             <Container title="CSS Modules">
-                <div className={styles.c_blue}>
-                    styles.c_blue
-                    <span className={styles.c_blue_cc}>styles.c_blue_cc</span>
+                <div className={styles.c1}>styles.c1</div>
+
+                <div className={styles.list}>
+                    {[1, 2, 3].map((item, i) => (
+                        <div key={i} className={classNames(styles.item, { [styles.disabled]: item == 2 })}>{item}</div>
+                    ))}
                 </div>
-                <div className={styles.aa}>styles.aa</div>
+
+                <div className={classNames('font-bold m-16', styles.c2)}>
+                    styles.c2
+                    <Button1 />
+                </div>
+
                 <div style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(styles, null, 2)}</div>
             </Container>
             <Container title="common components">

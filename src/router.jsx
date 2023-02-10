@@ -38,7 +38,7 @@ function ReactLazy(factory) {
         }
         throw e
     }))
-    return class extends React.Component {
+    return class HOC extends React.Component {
         render() {
             return (
                 <React.Suspense fallback={<div>loading</div>}>

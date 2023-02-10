@@ -2,18 +2,42 @@
     background-color: red;
 }
 
-.c_blue {
+.list {
     background-color: blue;
+    padding: 8px;
 
-    .aa {
-        background-color: red;
+    .item {
+        background-color: yellow;
+
+        &:hover {
+            background-color: yellowgreen
+        }
+
+        &.disabled {
+            background-color: gray;
+        }
+
+        &+.item {
+            margin-top: 8px;
+        }
     }
 
-    &_cc {
-        background-color: red;
-    }
+    // &_cc {
+    //     background-color: yellow;
+    // }
 }
 
-.aa {
-    background-color: yellow;
+.colorWhite {
+    color: #fff;
+}
+
+.c2 {
+    background-color: orange;
+    composes: colorWhite;
+
+    :global {
+        .common-button1 {
+            background-color: red;
+        }
+    }
 }

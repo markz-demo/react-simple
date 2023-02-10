@@ -43,4 +43,5 @@ npm i copy-webpack-plugin -D
 
 npm i webpack-bundle-analyzer case-sensitive-paths-webpack-plugin -D
 
+npm i eslint eslint-plugin-react eslint-plugin-react-hooks -D
 ```
