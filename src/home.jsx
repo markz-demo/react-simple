@@ -4,10 +4,13 @@ import './home.less'
 import styles from './home.module.less'
 import test_big from '@images/test-big.jpg'
 import test_small from '@images/test-small.jpg'
-import { Button1, Button2, Col, Container, Row, utils } from 'common-ui'
+import { Button1, Button2, Col, Container, Row, useMount, utils } from 'common-ui'
 
 export default function Home() {
     const [count, setCount] = useState(0)
+    useMount(() => {
+        setCount(100)
+    })
     const onClick = () => {
         setCount(count + 1)
     }
