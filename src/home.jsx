@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import classNames from 'classnames'
-import './home.less'
-import styles from './home.module.less'
-import test_big from '@images/test-big.jpg'
-import test_small from '@images/test-small.jpg'
-import { Button1, Button2, Col, Container, Row, useMount, utils } from 'common-ui'
+import { useState } from 'react';
+import classNames from 'classnames';
+import './home.less';
+import styles from './home.module.less';
+import test_big from '@images/test-big.jpg';
+import test_small from '@images/test-small.jpg';
+import { Button1, Button2, Col, Container, Row, useMount, utils } from 'common-ui';
 
 export default function Home() {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
     useMount(() => {
-        setCount(100)
-    })
+        setCount(100);
+    });
     const onClick = () => {
-        setCount(count + 1)
-    }
+        setCount(count + 1);
+    };
     const onUtilsClick = () => {
-        utils.test('home')
-    }
+        utils.test('home');
+    };
     return (
         <div>
             <h2 className="home-div">Hello World!{count}</h2>
@@ -26,7 +26,7 @@ export default function Home() {
 
                 <div className={styles.list}>
                     {[1, 2, 3].map((item, i) => (
-                        <div key={i} className={classNames(styles.item, { [styles.disabled]: item == 2 })}>{item}</div>
+                        <div key={i} className={classNames(styles.item, { [styles.disabled]: item === 2 })}>{item}</div>
                     ))}
                 </div>
 
@@ -59,5 +59,5 @@ export default function Home() {
                 <img alt="test" src={test_big} />
             </Container>
         </div>
-    )
+    );
 }

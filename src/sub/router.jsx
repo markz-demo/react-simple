@@ -1,6 +1,6 @@
-import { Container } from 'common-ui'
-import { Routes, Route, NavLink } from 'react-router-dom'
-import Sub2 from './sub2'
+import { Container } from 'common-ui';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import Sub2 from './sub2';
 
 export default function Router() {
     return (
@@ -19,7 +19,7 @@ export default function Router() {
                 </Routes>
             </div>
         </div>
-    )
+    );
 }
 
 function Index() {
@@ -27,7 +27,7 @@ function Index() {
         <Container title="Sub index">
             TODO
         </Container>
-    )
+    );
 }
 
 function Sub1() {
@@ -35,5 +35,5 @@ function Sub1() {
         <Container title="Sub1">
             TODO
         </Container>
-    )
+    );
 }

@@ -1,2 +1,2 @@
-console.log('common init')
-// alert('common init')
+console.log('common init');
+// alert('common init');

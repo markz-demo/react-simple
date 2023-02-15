@@ -1,5 +1,5 @@
 
-import { Button1, Button3, Container } from 'common-ui'
+import { Button1, Button3, Container } from 'common-ui';
 
 export default function Page1() {
     return (
@@ -7,5 +7,5 @@ export default function Page1() {
             <Button1 />
             <Button3 />
         </Container>
-    )
+    );
 }

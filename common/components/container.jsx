@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import classNames from "classnames";
 
 export default function Container({ children, className, style, title }) {
     return (
@@ -6,5 +6,5 @@ export default function Container({ children, className, style, title }) {
             {title && <div className="common-container-title">{title}</div>}
             {children}
         </div>
-    )
+    );
 }
