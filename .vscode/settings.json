@@ -1,4 +1,5 @@
 {
+    "files.insertFinalNewline": true,
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
@@ -11,6 +12,16 @@
     "[css]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
+    "css.lint.validProperties": [
+        "composes"
+    ],
+    "less.lint.validProperties": [
+        "composes"
+    ],
+    "scss.lint.validProperties": [
+        "composes"
+    ],
+    "eslint.enable": true,
     "eslint.format.enable": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
@@ -18,6 +29,10 @@
     "eslint.rules.customizations": [
         {
             "rule": "semi",
+            "severity": "off"
+        },
+        {
+            "rule": "eol-last",
             "severity": "off"
         }
     ]

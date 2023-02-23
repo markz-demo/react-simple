@@ -38,7 +38,6 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
 
-
     // enhances error
     "semi": "error",
     "eqeqeq": ["error", "always", { "null": "ignore" }],
@@ -64,6 +63,5 @@ module.exports = {
       "ignoreRestSiblings": true,
       "vars": "all",
     }],
-
   }
 };
